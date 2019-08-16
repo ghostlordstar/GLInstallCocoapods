@@ -1,0 +1,2 @@
+# GLInstallCocoapods
+Homebrew install cocoapods
