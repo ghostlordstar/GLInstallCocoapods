@@ -10,6 +10,20 @@ echo "#     Copyright © 2019 ghostlord. All rights reserved.    #"
 echo "#                                                         #"
 echo "###########################################################"
 
+
+
+
+sudo gem uninstall cocoapods
+sudo gem uninstall cocoapods-core
+sudo gem uninstall cocoapods-deintegrate
+sudo gem uninstall cocoapods-downloader
+sudo gem uninstall cocoapods-plugins
+sudo gem uninstall cocoapods-search
+sudo gem uninstall cocoapods-stats
+sudo gem uninstall cocoapods-trunk
+sudo gem uninstall cocoapods-try
+exit 0
+
 echo
 echo "### Begin install Cocoapods ###"
 echo
