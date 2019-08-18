@@ -10,19 +10,33 @@ echo "#     Copyright © 2019 ghostlord. All rights reserved.    #"
 echo "#                                                         #"
 echo "###########################################################"
 
+checkGem=`gem list`
 
+if [[ $checkGem =~ 'cocoapods' ]]; then
+echo
+echo "gem installed Cocoapods, to continue we need to uninstall cocoapods: y/n"
 
+read isUninstall
 
-sudo gem uninstall cocoapods
-sudo gem uninstall cocoapods-core
-sudo gem uninstall cocoapods-deintegrate
-sudo gem uninstall cocoapods-downloader
-sudo gem uninstall cocoapods-plugins
-sudo gem uninstall cocoapods-search
-sudo gem uninstall cocoapods-stats
-sudo gem uninstall cocoapods-trunk
-sudo gem uninstall cocoapods-try
-exit 0
+confirm="y"
+
+    if [ $isUninstall = $confirm ]; then
+
+    sudo gem uninstall cocoapods
+    sudo gem uninstall cocoapods-core
+    sudo gem uninstall cocoapods-deintegrate
+    sudo gem uninstall cocoapods-downloader
+    sudo gem uninstall cocoapods-plugins
+    sudo gem uninstall cocoapods-search
+    sudo gem uninstall cocoapods-stats
+    sudo gem uninstall cocoapods-trunk
+    sudo gem uninstall cocoapods-try
+
+    else
+        echo
+        echo "Exit the installation！"
+    fi
+fi
 
 echo
 echo "### Begin install Cocoapods ###"
@@ -62,7 +76,7 @@ if command -v brew > /dev/null; then
         exit 0
     else 
 
-         brew install cocoapods
+        brew install cocoapods
 
         if [$? -eq 0]; then
 
@@ -135,4 +149,3 @@ else
 fi
 
 exit 1
-
