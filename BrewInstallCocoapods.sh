@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo
 echo "###########################################################"
 echo "#                                                         #"
 echo "#     GLInstallCocoapods.sh                               #"
@@ -10,33 +11,8 @@ echo "#     Copyright © 2019 ghostlord. All rights reserved.    #"
 echo "#                                                         #"
 echo "###########################################################"
 
-checkGem=`gem list`
-
-if [[ $checkGem =~ 'cocoapods' ]]; then
-echo
-echo "gem installed Cocoapods, to continue we need to uninstall cocoapods: y/n"
-
-read isUninstall
-
-confirm="y"
-
-    if [ $isUninstall = $confirm ]; then
-
-    sudo gem uninstall cocoapods
-    sudo gem uninstall cocoapods-core
-    sudo gem uninstall cocoapods-deintegrate
-    sudo gem uninstall cocoapods-downloader
-    sudo gem uninstall cocoapods-plugins
-    sudo gem uninstall cocoapods-search
-    sudo gem uninstall cocoapods-stats
-    sudo gem uninstall cocoapods-trunk
-    sudo gem uninstall cocoapods-try
-
-    else
-        echo
-        echo "Exit the installation！"
-    fi
-fi
+chmod +x ./GemUninstallCocoapods.sh
+./GemUninstallCocoapods.sh
 
 echo
 echo "### Begin install Cocoapods ###"
@@ -67,18 +43,18 @@ if command -v brew > /dev/null; then
         echo
         echo "If you want reinstall Cocoapods, place run:"
         echo
-        echo "brew reinstall Cocoapods"
+        echo "\`brew reinstall Cocoapods\`"
         echo
         echo "If you want update Cocoapods, place run:"
         echo
-        echo "brew upgrade Cocoapods"
+        echo "\`brew upgrade Cocoapods\`"
 
         exit 0
     else 
 
         brew install cocoapods
 
-        if [$? -eq 0]; then
+        if [ $? -eq 0 ]; then
 
             echo
             echo "Cocoapods install success!"  
@@ -86,13 +62,13 @@ if command -v brew > /dev/null; then
             echo ">> 3. Cocoapods setUp ..."
 
             pod setup
-
-            if [$? -eq 0]; then
+            
+            if [ $? -eq 0 ]; then
 
                 echo
                 echo "✅ Cocoapods setUp success! Enjoy it!"  
                 echo
-                exit 1
+                exit 0
             else 
                 echo "❌ Cocoapods setUp faild! ⚠️ Error code: 11"
                 exit 1
@@ -112,7 +88,7 @@ else
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    if [$? -eq 0]; then
+    if [ $? -eq 0 ]; then
 
         echo
         echo "HomeBrew install success!" 
@@ -122,14 +98,14 @@ else
 
         brew install cocoapods
 
-        if [$? -eq 0]; then
+        if [ $? -eq 0 ]; then
 
             echo
             echo "Cocoapods install success!"  
             echo
             echo ">> 3. Cocoapods setUp ..."
 
-            if [$? -eq 0]; then
+            if [ $? -eq 0 ]; then
                 echo
                 echo "✅ Cocoapods setUp success! Enjoy it!"  
                 exit 1
