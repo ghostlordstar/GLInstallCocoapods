@@ -3,7 +3,7 @@
 echo
 echo "###########################################################"
 echo "#                                                         #"
-echo "#     GLInstallCocoapods.sh                               #"
+echo "#     GLInstallCocoapods                                  #"
 echo "#     Install Cocoapods with Homebrew                     #"
 echo "#                                                         #"
 echo "#     Created by ghostlord on 2019/8/16.                  #"

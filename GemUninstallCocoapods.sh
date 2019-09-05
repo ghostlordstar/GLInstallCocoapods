@@ -28,6 +28,9 @@ confirm="y"
     echo "Uninstall cocoapods success!"
     else
         echo
-        echo "Exit the uninstallation！"
+        echo "Exit the uninstallation！⚠️ Error code: 10"
+        echo
+        exit 0
     fi
+
 fi
