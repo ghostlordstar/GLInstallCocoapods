@@ -26,7 +26,7 @@ chmod +x ./BrewInstallCocoapods.sh
 
 ## TODO
 - [ ] 添加更多的异常处理
-- [ ] 对代码进行规范
+- [x] 对代码进行规范
 
 ## 合作
 
